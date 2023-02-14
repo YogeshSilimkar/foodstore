@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}Food Form{% endblock %}
+
+{% block body %}
+{% load crispy_forms_tags %}
+<h1>Food Form</h1>
+
+<div class="container">
+    <!-- <div class="row">
+        <div class="col">
+            <h2>form as table</h2>
+           <table>
+            {{foodform.as_table}}
+           </table>
+        </div>
+    </div>
+    <div class="row">
+        <h2>form as paragrapha</h2>
+        <div class="col">
+            {{foodform.as_p}}
+        </div>
+    </div>
+    <div class="row">
+        <h2>form as List</h2>
+        <div class="col">
+            {{foodform.as_ul}}
+        </div>
+    </div>
+-->
+    <div class="row">
+        <div class="col">
+            <img src="{ % static 'img/food.jpg' % }" alt="" class="img-fluid h-100">
+        </div>
+        <div class="col">
+            <div class="foodform">
+                <form action="#" method="POST" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    <table class="table table-borderless table-active">
+                        {{form | crispy}}
+                        <tr>
+                            <td colspan="2" align="right">
+                                <input class="btn btn-success" type="submit" value="Save">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

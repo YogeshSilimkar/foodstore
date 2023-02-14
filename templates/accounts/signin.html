@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}User Form{% endblock %}
+
+{% block body %}
+{% load crispy_forms_tags %}
+<h1>User Form</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img src="{ % static 'img/food.jpg' % }" alt="" class="img-fluid h-100">
+        </div>
+        <div class="col">
+            <div class="userform">
+                <form action="#" method="POST" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    <table class="table table-borderless table-active">
+                        {{form | crispy}}
+                        <tr>
+                            <td colspan="2" align="right">
+                                <input class="btn btn-success" type="submit" value="Save">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

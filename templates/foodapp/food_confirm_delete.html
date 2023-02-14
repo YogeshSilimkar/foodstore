@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}Food MenuList{% endblock %}
+{% block body %}
+
+    <div class="container">
+        <div class="alert-danger p-3" >
+            <p> Are Sure you want to Delete {{object}} ?</p>
+
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-danger" value="Yes">
+                <a class="btn btn-primary" href="/foodapp/foodlist">Back</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

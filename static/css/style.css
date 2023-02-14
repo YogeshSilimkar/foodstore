@@ -1,0 +1,15 @@
+.navbar .navbar-brand{
+    font-size: 35px;
+    color: orange;
+}
+.navbar .navbar-brand i{
+    color: black;
+}
+.navbar .navbar-brand span{
+    color: red;
+}
+.foodform ul li{
+    margin: 10px;
+    list-style-type: none;
+    display: inline-block ;
+}
